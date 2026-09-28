@@ -14,13 +14,13 @@
         i.uv = screen_aspect(i.uv);
         
         float2 st = i.uv;
-        float x = 2 * st.y + sin(_Time.y * 5);
-        float distort = sin(_Time.y * 10) * 0.1 *
+        float x = 2 * st.y + sin(_Time.x * 5);
+        float distort = sin(_Time.x * 10) * 0.1 *
                         sin(5 * x) * (- (x - 1) * (x - 1) + 1);
         
         st.x += distort;
 
-        float t = -_Time.y * 10;
+        float t = -_Time.x * 10;
         return float4(abs(sin(t + 40.0 * length(0.5 - st + distort * 0.1))),
                       abs(sin(t + 40.0 * length(0.5 - st - distort * 0.15))),
                       abs(sin(t + 40.0 * length(0.5 - st + distort * 0.2))),

@@ -27,14 +27,14 @@
     float tri(float2 uv)
     {
         float sp = 1.2 + 3.3 * floor(tri_uv(uv));
-        return max(0, sin(sp * _Time.y));
+        return max(0, sin(sp * _Time.x));
     }
     
     float4 frag(v2f_img i) : SV_Target
     {
         i.uv = screen_aspect(i.uv);
         
-        float radius = (1 + sin(_Time.y)) * 0.05 + 0.05;
+        float radius = (1 + sin(_Time.x)) * 0.05 + 0.05;
         float2 uv = transform_uv(i.uv, radius);
         return tri(uv * 7);
     }

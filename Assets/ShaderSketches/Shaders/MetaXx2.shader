@@ -20,7 +20,7 @@
 
     float2 move(float2 st, float offset)
     {
-        float t = _Time.y;
+        float t = _Time.x;
         return st + float2(sin(offset + t),
                            sin(offset + t * 3)) * 0.3;
     }
@@ -33,7 +33,7 @@
                   circle(move(st, 4)) *
                   circle(move(st, 8));
         
-        float ft = frac(_Time.y * 2);
+        float ft = frac(_Time.x * 2);
         float a = smoothstep(0.6, 0.8, ft) *
              (1 - smoothstep(0.8, 1.0, ft));
         
@@ -43,7 +43,7 @@
     float4 frag(v2f_img i) : SV_Target
     {
         i.uv = screen_aspect(i.uv);
-        i.uv = abs(0.5 - rotate(i.uv, _Time.y * 2));
+        i.uv = abs(0.5 - rotate(i.uv, _Time.x * 2));
 
         return lerp(float4(0.16, 0.80, 0.80, 1),
                     float4(0.16, 0.07, 0.31, 1),

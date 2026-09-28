@@ -20,7 +20,7 @@
 
     float2 move(float2 st, float offset)
     {
-        float t = _Time.y;
+        float t = _Time.x;
         return st + float2(sin(offset + t),
                            sin(offset + t * 3)) * 0.56;
     }
@@ -29,7 +29,7 @@
     {
         st = (st - 0.5) / 0.7;
 
-        float a = atan2(st.y, st.x) + _Time.y;
+        float a = atan2(st.y, st.x) + _Time.x;
         float l = pow(length(st), 0.8);
         return l - 0.5 + cos(a * 5.0) * 0.08;
     }
@@ -40,7 +40,7 @@
                   star(move(st, 2)) *
                   star(move(st, 4));
         
-        float ft = frac(_Time.y * 3);
+        float ft = frac(_Time.x * 3);
         float a = smoothstep(0.6, 0.8, ft) *
              (1 - smoothstep(0.8, 1.0, ft));
         
@@ -63,7 +63,7 @@
                          float4(0.92, 0.97, 0.99, 1),
                          meta_xx(i.uv + 0.01).w);
 
-        float stx = abs(0.5 - rotate(i.uv, -_Time.y * 3));
+        float stx = abs(0.5 - rotate(i.uv, -_Time.x * 3));
         float4 lines = meta_xx(stx);
         
         return lerp(float4(lines.xyz, 1), xx, lines.w);

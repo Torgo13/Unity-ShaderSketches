@@ -38,7 +38,7 @@
     {
         float2 ist = floor(st * n);
         float freq = 3.5 * length(0.5 - (ist + 0.5) / n);
-        float t = sin(rand(ist) * 2 + -_Time.y * 2 + freq) * 0.5;
+        float t = sin(rand(ist) * 2 + -_Time.x * 2 + freq) * 0.5;
         return box(frac(st * n), t);
     }
 

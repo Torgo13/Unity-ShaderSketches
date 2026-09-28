@@ -11,7 +11,7 @@
 
     float2 move(float2 st, float offset)
     {
-        float t = _Time.y;
+        float t = _Time.x;
         return st + float2(sin(offset + t),
                            sin(offset + t * 3)) * 0.3;
     }
@@ -24,7 +24,7 @@
                   circle(move(st, 4)) *
                   circle(move(st, 8));
 
-        float ft = frac(_Time.y * 1.5);
+        float ft = frac(_Time.x * 1.5);
         float a = smoothstep(0.6, 0.8, ft) *
              (1 - smoothstep(0.8, 1.0, ft));
         

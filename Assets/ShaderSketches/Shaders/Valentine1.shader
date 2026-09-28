@@ -11,7 +11,7 @@
 
     float4 palette(float a)
     {
-        float t = _Time.y * 0.5;
+        float t = _Time.x * 0.5;
         float g = 0.6 + 0.3 * sin(a * 8 + t * 2);
         float b = 0.6 + 0.3 * sin(a * 5 + t * 3);
         return float4(1, g, b, 1);
@@ -28,7 +28,7 @@
     {
         i.uv = screen_aspect(i.uv);
         
-        float t = _Time.y;
+        float t = _Time.x;
 
         float2 st = i.uv;
         float distort = -t * 0.3 + sin(st * 2 + t) * 0.1;

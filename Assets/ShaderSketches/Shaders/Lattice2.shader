@@ -33,7 +33,7 @@
     float lattice(float2 st, float n)
     {
         float freq = 2.5 * length(0.5 - (floor(st * n) + 0.5) / n);
-        float t = sin(-_Time.y * 2 + freq) * 0.5;
+        float t = sin(-_Time.x * 2 + freq) * 0.5;
         return box(frac(st * n), t);
     }
 

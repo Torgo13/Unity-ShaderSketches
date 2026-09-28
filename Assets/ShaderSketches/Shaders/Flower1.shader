@@ -30,7 +30,7 @@
 
     float wave(float freq)
     {
-        return (1 + sin(-_Time.y * 2 + freq)) * 0.5;
+        return (1 + sin(-_Time.x * 2 + freq)) * 0.5;
     }
 
     float2 rotate(float2 st, float angle)
@@ -53,7 +53,7 @@
         float size = wave(frequency(uv, n)) * 0.8;
         
         float r = length(st) * 2;
-        float a = atan2(st.y, st.x) + _Time.y / 2;
+        float a = atan2(st.y, st.x) + _Time.x / 2;
         float f = (abs(cos(a * 6)) + 0.4) * pow(size, 3) * 1.4;
 
         float4 color = 0;

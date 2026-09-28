@@ -23,8 +23,8 @@
 
     float shape(float2 st, float n, float odd)
     {
-        float it = floor(_Time.y);
-        float ft = frac(_Time.y);
+        float it = floor(_Time.x);
+        float ft = frac(_Time.x);
         float t = it + smoothstep(0.3, 0.8, ft);
 
         st = rotate(st, PI / 4 * t * lerp(1, -1, odd));

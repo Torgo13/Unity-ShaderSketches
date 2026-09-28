@@ -31,7 +31,7 @@
         float stxn =  st.x * n;
         stxn *= sin(st.y);
 
-        float size = sin(st.y + _Time.y * 1.3 + rand(floor(stxn) * 0.5)) * 1.42;
+        float size = sin(st.y + _Time.x * 1.3 + rand(floor(stxn) * 0.5)) * 1.42;
 
         st = frac(stxn);
         st = step(size, st) * step(size, 1.0 - st);

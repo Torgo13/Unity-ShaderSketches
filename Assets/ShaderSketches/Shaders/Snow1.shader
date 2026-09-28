@@ -23,12 +23,12 @@
     {
         st = floor(st * n) / n;
         float pos = st.y + st.x;
-        return (1 + sin(-_Time.y * 5 + pos * 5)) * 0.5;
+        return (1 + sin(-_Time.x * 5 + pos * 5)) * 0.5;
     }
 
     float snow(float2 st, float size)
     {
-        st = rotate(st, _Time.x * 10);
+        st = rotate(st, _Time.x / 2);
         st = 0.5 - st;
         float r = length(st) * 2;
         float a = atan2(st.y, st.x);

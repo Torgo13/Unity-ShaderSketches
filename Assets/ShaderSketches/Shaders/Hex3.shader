@@ -33,7 +33,7 @@
     float swirl(float2 st)
     {
         float phi = atan2(st.y, st.x);
-        return sin(length(st) * 8 + phi - _Time.y * 4) * 0.5 + 0.5;
+        return sin(length(st) * 8 + phi - _Time.x * 4) * 0.5 + 0.5;
     }
             
     float4 frag(v2f_img i) : SV_Target
@@ -46,7 +46,7 @@
         float stepped_sw = step(0.5, sw);
         sw = lerp(2, 3.505, stepped_sw);
         
-        float hwave = abs(sin(hex_grid(i.uv) * 30 * sw + _Time.y * 2 * sw));
+        float hwave = abs(sin(hex_grid(i.uv) * 30 * sw + _Time.x * 2 * sw));
         float stepped_hwave = step(hwave, 0.5);
         
         return lerp(float4(0, 1, 0, 1),

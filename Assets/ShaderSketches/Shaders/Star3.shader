@@ -33,7 +33,7 @@
         st -= 0.5;
         st /= size;
 
-        float a = atan2(st.y, st.x) + _Time.y * 0.3;
+        float a = atan2(st.y, st.x) + _Time.x * 0.3;
         float l = pow(length(st), 0.8);
         float d = l - 0.5 + cos(a * 5.0) * 0.08;
 
@@ -43,8 +43,8 @@
     float halftone(float2 st)
     {
         float n = 51;
-        float angle = -_Time.y * PI * 0.05;
-        float scale = 0.025 + (1 + sin(_Time.y)) * 0.5 * 0.975;
+        float angle = -_Time.x * PI * 0.05;
+        float scale = 0.025 + (1 + sin(_Time.x)) * 0.5 * 0.975;
 
         st = rs(st, angle, scale);
 

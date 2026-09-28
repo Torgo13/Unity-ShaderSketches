@@ -29,7 +29,7 @@
         i.uv = screen_aspect(i.uv);
         
         float2 st = i.uv;
-        float t = _Time.y;
+        float t = _Time.x;
         
         st -= 0.5;
         st = mul(rotate(sin(t) * PI), st);

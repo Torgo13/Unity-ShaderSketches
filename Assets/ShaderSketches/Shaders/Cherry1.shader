@@ -26,7 +26,7 @@
 
     float4 draw_cherry(float2 st, float size)
     {
-        st = rotate(st, _Time.y);
+        st = rotate(st, _Time.x);
         st = 0.5 - st;
         size *= 0.2;
         
@@ -53,7 +53,7 @@
         // circle
         float size_offset = rand(floor(st * 10)) * 5;
         float circle = step(length(0.5 - frac(st * 10)),
-                            (1 + sin(size_offset + -_Time.y * 3)) * 0.2);
+                            (1 + sin(size_offset + -_Time.x * 3)) * 0.2);
         color = lerp(color, 1, circle * 0.2);
         
         // cherry

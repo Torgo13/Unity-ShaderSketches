@@ -35,7 +35,7 @@
     float wave(float2 st)
     {
         float pos = st.y + st.x;
-        float a = (1 + sin(_Time.y * 2 + pos * 3.5)) * 0.5;
+        float a = (1 + sin(_Time.x * 2 + pos * 3.5)) * 0.5;
         return smoothstep(0.3, 1, a);
     }
 
@@ -43,8 +43,8 @@
     {
         i.uv = screen_aspect(i.uv);
 
-        float x = 2 * i.uv.y + sin(_Time.y * 1.5);
-        float distort = sin(_Time.y * 3) * 0.13 *
+        float x = 2 * i.uv.y + sin(_Time.x * 1.5);
+        float distort = sin(_Time.x * 3) * 0.13 *
                         sin(5 * x) * (- (x - 1) * (x - 1) + 1);
         i.uv.x += distort;
 

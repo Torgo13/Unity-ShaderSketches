@@ -11,7 +11,7 @@
 
     float4 palette(float a)
     {
-        float t = _Time.y * 0.5;
+        float t = _Time.x * 0.5;
         float r = 0.6 + 0.3 * sin(a * 8 + t * 2);
         float g = 0.6 + 0.3 * sin(a * 5 + t * 3);
         return float4(r, g, 1, 1);
@@ -22,10 +22,10 @@
         p -= 0.5;
         p *= 2;
         
-        float a = atan2(p.y, p.x) + _Time.y / 3.0;
+        float a = atan2(p.y, p.x) + _Time.x / 3.0;
         float l = pow(length(p), 0.8) * 1.7;
         float d = l - 0.5 + cos(a * 5.0) * 0.1;
-        return 1 - step(d, sin(d * 70 + _Time.y * 30));
+        return 1 - step(d, sin(d * 70 + _Time.x * 30));
     }
 
     float4 frag(v2f_img i) : SV_Target

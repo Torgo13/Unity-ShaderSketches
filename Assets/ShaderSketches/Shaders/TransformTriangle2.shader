@@ -27,7 +27,7 @@
     {
         i.uv = screen_aspect(i.uv);
         
-        float t = smoothstep(0.1, 0.8, frac(_Time.y * 0.3));
+        float t = smoothstep(0.1, 0.8, frac(_Time.x * 0.3));
         float t1 = frac(t * 0.5);
         
         float2 st1 = transform_uv(i.uv, 0.01 + t * 0.069);

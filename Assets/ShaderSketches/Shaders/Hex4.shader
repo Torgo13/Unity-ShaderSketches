@@ -33,7 +33,7 @@
     float wave(float2 st)
     {
         float pos = st.y + st.x;
-        return (1 + sin(-_Time.y * 3 + pos * 4)) * 0.4;
+        return (1 + sin(-_Time.x * 3 + pos * 4)) * 0.4;
     }
 
     float4 frag(v2f_img i) : SV_Target
@@ -43,7 +43,7 @@
         float4 color = 0;
         float w = wave(i.uv);
 
-        i.uv.xy += _Time.x;
+        i.uv.xy += _Time.x / 20;
 
         float h1 = abs(0.4 + sin(hex_grid(i.uv) * 40) * w);
         h1 = step(h1, 0.1);

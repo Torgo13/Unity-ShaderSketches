@@ -37,7 +37,7 @@
         st -= 0.5;
         st *= 1.2;
 
-        float a = atan2(st.y, st.x) + _Time.y * 0.3;
+        float a = atan2(st.y, st.x) + _Time.x * 0.3;
         float l = pow(length(st), 0.8);
         float d = l - 0.5 + cos(a * 5.0) * 0.08;
 
@@ -72,7 +72,7 @@
 
     float morphing(float2 st, float2 offset)
     {
-        float t = _Time.y * 3;
+        float t = _Time.x * 3;
         int it = (floor(t) + offset.x + offset.y) % 4;
         float a = smoothstep(0, 0.6, frac(t));
 

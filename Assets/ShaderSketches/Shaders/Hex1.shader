@@ -34,7 +34,7 @@
     {
         i.uv = screen_aspect(i.uv);
 
-        float a = length(min(mod(-_Time.y + length(0.5 - i.uv), 3.0) - 1.0, 1.0));
+        float a = length(min(mod(-_Time.x + length(0.5 - i.uv), 3.0) - 1.0, 1.0));
         float h = hex_grid(i.uv) * a;
 
         return float4(0.2, 1, 0.2, 1) * step(abs(sin(h * 50)), 0.15);

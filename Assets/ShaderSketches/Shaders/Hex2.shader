@@ -33,7 +33,7 @@
     float swirl(float2 st)
     {
         float phi = atan2(st.y, st.x);
-        return sin(length(st) * 8 + phi - _Time.y * 4) * 0.5 + 0.5;
+        return sin(length(st) * 8 + phi - _Time.x * 4) * 0.5 + 0.5;
     }
     
     float4 frag(v2f_img i) : SV_Target

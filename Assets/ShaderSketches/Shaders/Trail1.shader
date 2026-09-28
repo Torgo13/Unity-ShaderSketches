@@ -36,7 +36,7 @@
 
     float lattice(float2 st, float n)
     {
-        float size = sin(st.y + _Time.y * 1.3 + rand(floor(st * n).x * 0.5));
+        float size = sin(st.y + _Time.x * 1.3 + rand(floor(st * n).x * 0.5));
         return box(frac(st * n), size);
     }
 

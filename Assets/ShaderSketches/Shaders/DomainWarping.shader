@@ -55,7 +55,7 @@
     {
         i.uv = screen_aspect(i.uv);
         
-        float t = _Time.y;
+        float t = _Time.x;
         float2 st = i.uv;
 
         float2 q = 0;
@@ -78,7 +78,7 @@
                      saturate(length(q)));
 
         color = lerp(color,
-                     float3(0.07, 1, 0.07),
+                     float3(0.07, 0.07, 0.07),
                      saturate(length(r.x)));
 
         return float4((f * f * f + 0.6 * f * f + 0.5 * f) * color, 1.0);

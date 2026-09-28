@@ -30,7 +30,7 @@
         float2 fst = frac(st * n);
 
         float x = (ist.x + ist.y) / n * 0.8;
-        float t = frac(x + _Time.y + rand(ist) * 0.35);
+        float t = frac(x + _Time.x + rand(ist) * 0.35);
 
         return ripple(fst, t) * (1 - t);
     }
@@ -38,7 +38,7 @@
     float4 frag(v2f_img i) : SV_Target
     {
         i.uv = screen_aspect(i.uv);
-        i.uv += _Time.y * 0.2;
+        i.uv += _Time.x * 0.2;
 
         return lerp(float4(0.03, 0.03, 0.13, 1),
                     float4(0.25, 0.20, 0.89, 1),

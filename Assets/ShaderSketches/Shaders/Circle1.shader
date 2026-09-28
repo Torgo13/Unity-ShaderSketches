@@ -27,7 +27,7 @@
 
         float n = 13;
         float freq = 7 * length(0.5 - (floor(i.uv * n) + 0.5) / n);
-        float t = sin(-_Time.y * 2 + freq) * 0.5;
+        float t = sin(-_Time.x * 2 + freq) * 0.5;
         
         i.uv -= 0.5;
         i.uv *= t;

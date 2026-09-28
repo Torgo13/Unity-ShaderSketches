@@ -28,7 +28,7 @@
         i.uv = screen_aspect(i.uv);
         
         float2 st = i.uv;
-        float t = _Time.y;
+        float t = _Time.x;
         
         st = mul(translate(sin(t) * 0.35,
                            cos(t) * 0.35),

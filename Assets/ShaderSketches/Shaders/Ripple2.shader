@@ -30,7 +30,7 @@
         float2 fst = frac(st * n);
 
         float x = (ist.x + ist.y) / n * 0.8;
-        float t = frac(x + _Time.y + rand(ist) * 0.7);
+        float t = frac(x + _Time.x + rand(ist) * 0.7);
 
         return ripple(fst, t) * (1 - t);
     }
@@ -39,7 +39,7 @@
     {
         i.uv = screen_aspect(i.uv);
 
-        float t = _Time.y;
+        float t = _Time.x;
         i.uv *= 1.0 + 0.1 * sin(i.uv.x * 5.0 + t) + 0.1 * sin(i.uv.y * 3.0 + t);
         i.uv *= 1.0 + 0.3 * length(i.uv);
         i.uv += t * 0.2;

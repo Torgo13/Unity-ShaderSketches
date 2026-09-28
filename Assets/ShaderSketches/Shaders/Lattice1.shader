@@ -37,7 +37,7 @@
 
         float n = 10;
         float freq = 2.5 * length(0.5 - (floor(i.uv * n) + 0.5) / n);
-        float t = sin(-_Time.y * 2 + freq) * 0.5;
+        float t = sin(-_Time.x * 2 + freq) * 0.5;
 
         return box(frac(i.uv * n), t);
     }

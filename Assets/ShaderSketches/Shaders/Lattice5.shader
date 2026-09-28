@@ -38,7 +38,7 @@
         float2 ist = floor(st * n);
         float2 fst = frac(st * n);
         float x = (ist.x + ist.y) / n * 0.8;
-        float size = (1 + sin(x + _Time.y + rand(ist) * 0.7)) * 0.5;
+        float size = (1 + sin(x + _Time.x + rand(ist) * 0.7)) * 0.5;
 
         return box(fst, size) * size * 3;
     }

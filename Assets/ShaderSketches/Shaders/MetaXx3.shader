@@ -20,7 +20,7 @@
 
     float2 move(float2 st, float offset)
     {
-        float t = _Time.y;
+        float t = _Time.x;
         return st + float2(sin(offset + t),
                            sin(offset + t * 3)) * 0.57;
     }
@@ -40,7 +40,7 @@
                   circle(move(st, 4)) *
                   circle(move(st, 8));
         
-        float ft = frac(_Time.y * 2);
+        float ft = frac(_Time.x * 2);
         float a = smoothstep(0.5, 0.75, ft) *
              (1 - smoothstep(0.75, 1.0, ft));
         
@@ -51,7 +51,7 @@
     {
         i.uv = screen_aspect(i.uv);
 
-        float2 st = abs(0.5 - rotate(i.uv, _Time.y * 2));
+        float2 st = abs(0.5 - rotate(i.uv, _Time.x * 2));
         float vinette = 1.2 - length(0.5 - i.uv);
 
         return lerp(float4(0.89, 0.98, 0.04, 1),
