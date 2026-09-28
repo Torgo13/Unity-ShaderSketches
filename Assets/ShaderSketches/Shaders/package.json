@@ -1,0 +1,17 @@
+{
+  "name": "com.setchi.shader-sketches",
+  "version": "1.0.0",
+  "displayName": "ShaderSketches",
+  "description": "ShaderSketches",
+  "unity": "2018.2",
+  "unityRelease": "12f1",
+  "documentationUrl": "https://setchi.jp/unity/shader-sketches/",
+  "changelogUrl": "https://github.com/setchi/Unity-ShaderSketches",
+  "keywords": [
+    "shader"
+  ],
+  "author": {
+    "name": "setchi",
+    "url": "https://twitter.com/setchi/"
+  }
+}
